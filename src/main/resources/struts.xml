@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+    <constant name="struts.enable.DynamicMethodInvocation" value="true"/>
+    <constant name="struts.action.excludePattern" value="/static/.*?" />
+    <constant name="struts.custom.i18n.resources" value="message"/>
+
+    <package name="struts-globel" extends="struts-default" abstract="true">
+        <global-allowed-methods>regex:.*</global-allowed-methods>
+    </package>
+
+    <package name="/web/shell" extends="struts-globel" namespace="/">
+        <action name="login" class="sanjin.core.action.HelloWorldAction">
+            <result name="success">/jsp/login.jsp</result>
+            <result name="login">/jsp/login.jsp</result>
+        </action>
+        <action name="loginSubmit" class="sanjin.core.action.HelloWorldAction">
+            <result name="success">/jsp/menu.jsp</result>
+            <result name="error">/jsp/login.jsp</result>
+        </action>
+    </package>
+</struts>
