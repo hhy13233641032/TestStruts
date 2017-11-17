@@ -14,10 +14,9 @@ public class CssUrlTagSupport extends StrutsBodyTagSupport {
 
     @Override
     public int doStartTag() throws JspException {
-        String baseUrl = ApplicationContext.getSystemImgUrl();
-        JspWriter out = this.pageContext.getOut();
+      JspWriter out = this.pageContext.getOut();
         try {
-            out.print("/ts"+value.toString());
+            out.print(LinkUrlUtils.getlInkUrl(value));
         } catch (IOException e) {
             e.printStackTrace();
         }

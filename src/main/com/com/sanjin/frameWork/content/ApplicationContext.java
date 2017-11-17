@@ -46,6 +46,10 @@ public class ApplicationContext {
         }
 
         systemImgUrl = commonConfigMap.getProperty("system.img.url");
+        if(StringUtils.isEmpty(systemImgUrl)){
+            systemImgUrl = servletContext.getContextPath();
+        }
+
         String defaultLocale = commonConfigMap.getProperty("system.defaultLocale");
         if (StringUtils.isEmpty(defaultLocale)) {
             defaultLocale = servletContext.getInitParameter("defaultLocale");
