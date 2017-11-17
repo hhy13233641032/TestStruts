@@ -24,6 +24,8 @@ public class ApplicationContext {
 
     private static String systemImgUrl;
 
+    private static String contextPath;
+
     private static String realPath;
 
     private static boolean isMysql;
@@ -47,8 +49,9 @@ public class ApplicationContext {
 
         systemImgUrl = commonConfigMap.getProperty("system.img.url");
         if(StringUtils.isEmpty(systemImgUrl)){
-            systemImgUrl = servletContext.getContextPath();
+
         }
+        contextPath = servletContext.getContextPath();
 
         String defaultLocale = commonConfigMap.getProperty("system.defaultLocale");
         if (StringUtils.isEmpty(defaultLocale)) {
@@ -86,5 +89,9 @@ public class ApplicationContext {
 
     public static String getCurrentVersionNo() {
         return currentVersionNo;
+    }
+
+    public static String getContextPath() {
+        return contextPath;
     }
 }
