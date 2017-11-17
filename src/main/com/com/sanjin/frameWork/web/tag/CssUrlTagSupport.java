@@ -1,6 +1,5 @@
 package com.sanjin.frameWork.web.tag;
 
-import com.sanjin.frameWork.content.ApplicationContext;
 import org.apache.struts2.views.jsp.StrutsBodyTagSupport;
 import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.JspWriter;
