@@ -34,7 +34,7 @@ public class ApplicationContext {
 
     protected static void initCommonConfig(ServletContext servletContext){
         InputStream is = null;
-        realPath =  System.getProperty("sanJin.root");
+        realPath =  System.getProperty("sanJin.root");  //项目所在的磁盘路径
         String filePath = realPath +"WEB-INF"+File.separator+"config"+File.separator+"common-config.properties";
         try {
             // is = ApplicationContext.class.getClassLoader().getResourceAsStream("/common-config.properties");
@@ -51,6 +51,7 @@ public class ApplicationContext {
         if(StringUtils.isEmpty(systemImgUrl)){
 
         }
+        //项目根路径
         contextPath = servletContext.getContextPath();
 
         String defaultLocale = commonConfigMap.getProperty("system.defaultLocale");
@@ -73,6 +74,7 @@ public class ApplicationContext {
         String dataSourceUrl = commonConfigMap.getProperty("sanjin.dataSource.url");
         isMysql = dataSourceUrl.contains("mysql");
         isOracle = dataSourceUrl.contains("oracle");
+
     }
 
     public static String getSystemImgUrl() {

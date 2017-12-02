@@ -14,11 +14,11 @@
     </package>
 
     <package name="/web/shell" extends="struts-globel" namespace="/">
-        <action name="login" class="sanjin.core.action.HelloWorldAction">
+        <action name="login" class="com.sanjin.core.action.HelloWorldAction">
             <result name="success">/jsp/login.jsp</result>
             <result name="login">/jsp/login.jsp</result>
         </action>
-        <action name="loginSubmit" class="sanjin.core.action.HelloWorldAction">
+        <action name="loginSubmit" class="com.sanjin.core.action.HelloWorldAction">
             <result name="success">/jsp/menu.jsp</result>
             <result name="error">/jsp/login.jsp</result>
         </action>

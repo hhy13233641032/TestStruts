@@ -1,4 +1,4 @@
-package sanjin.core.action;
+package com.sanjin.core.action;
 
 import com.opensymphony.xwork2.ActionSupport;
 
